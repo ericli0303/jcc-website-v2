@@ -1,5 +1,5 @@
 import React from 'react';
-import Mailchimp from './MailchimpForm';
+// import Mailchimp from './../MailPage/MailchimpForm';
 
 class LandingPage extends React.Component {
     constructor(props) {
@@ -57,7 +57,7 @@ class LandingPage extends React.Component {
 
         return (
             <header className="App-header" style={{ backgroundImage: imgUrl }}>
-                <Mailchimp />
+                {/* <Mailchimp /> */}
             </header>
         );
     }

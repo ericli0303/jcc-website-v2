@@ -1,5 +1,6 @@
 import React from 'react';
-import LandingPage from "./components/LandingPage";
+import LandingPage from "./components/LandingPage/LandingPage";
+import  Navbar  from "./components/Navbar/Navbar"
 import './App.css';
 import useWindowDimensions from './components/useWindowDimensions';
 import Fade from 'react-reveal/Fade'
@@ -11,6 +12,7 @@ function App() {
 
     return (
       <div className="App">
+            <Navbar />
             <LandingPage />
             <div style={{ width: width, height: height, borderStyle: 'solid', borderColor: 'red' }} >
                 <Fade left>
