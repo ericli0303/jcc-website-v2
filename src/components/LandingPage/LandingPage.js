@@ -1,4 +1,5 @@
 import React from 'react';
+import Box from '@material-ui/core/Box';
 // import Mailchimp from './../MailPage/MailchimpForm';
 
 class LandingPage extends React.Component {
@@ -54,11 +55,35 @@ class LandingPage extends React.Component {
     render() {
         const { images, currentImg } = this.state;
         const imgUrl = `url('${images[currentImg]}')`;
+        // const gradient = {
+
+        // };
 
         return (
-            <header className="App-header" style={{ backgroundImage: imgUrl }}>
-                {/* <Mailchimp /> */}
-            </header>
+            <div>
+                {/* <div className="gradient"></div> */}
+                <div className="App-header" style={{ backgroundImage: imgUrl }}>
+                    {/* <Mailchimp /> */}
+                </div>
+                <Box width="80%">
+                    <Box display="flex" flexDirection="row" m={10} flexWrap="wrap">
+                        <img 
+                            alt='first image landing' 
+                            src="https://i.pinimg.com/736x/33/32/6d/33326dcddbf15c56d631e374b62338dc.jpg"/>
+                        <Box mx={5}>
+                            <p>Lorem ipsum</p>
+                        </Box>
+                    </Box>
+                    <Box display="flex" flexDirection="row" m={10} flexWrap="wrap">
+                        <Box mx={5}>
+                            <p>Lorem ipsum</p>
+                        </Box>
+                        <img 
+                            alt="second image landing" 
+                            src="https://i.redd.it/02g1pfot5ds41.jpg" />
+                    </Box>
+                </Box>
+            </div>
         );
     }
 }
