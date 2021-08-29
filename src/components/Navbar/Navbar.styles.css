@@ -11,7 +11,7 @@
   } */
   
   nav {
-    position: absolute;
+    position: sticky;
     top: 0;
     left: 0;
     bottom: 0;
@@ -19,12 +19,13 @@
   }
   
   .background {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     width: 300px;
-    background: rgb(59, 175, 230);
+    opacity: .8;
+    background: rgb(35, 141, 190);
   }
   
   button {
@@ -39,6 +40,19 @@
     border-radius: 50%;
     background: transparent;
   }
+
+  /* button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: transparent;
+  } */
   
   ul,
   li {
@@ -67,6 +81,7 @@
     border-radius: 50%;
     flex: 40px 0;
     margin-right: 20px;
+    color:seashell
   }
 
   .icon-location {
@@ -78,6 +93,7 @@
     width: 200px;
     height: 20px;
     flex: 1;
+    color:rgb(255, 255, 255)
   }
   
   .refresh {
