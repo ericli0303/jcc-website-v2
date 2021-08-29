@@ -1,5 +1,6 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
+import {isDay} from './../Utils/time-helper';
 // import Mailchimp from './../MailPage/MailchimpForm';
 
 class LandingPage extends React.Component {
@@ -27,24 +28,13 @@ class LandingPage extends React.Component {
     }
 
     changeBackgroundImage() {
-        // currentImg 
-        // 0: morning
         // 1: day
         // 2: night
         let newCurrentImg = 0;
 
-        var clientTime = new Date();
-        var morningTime, dayTime, nightTime;
-
-
-
-        if (7 <= clientTime.getHours() && clientTime.getHours() < 12) {
-            newCurrentImg = 0;
-        }
-        else if (12 <= clientTime.getHours() && clientTime.getHours() < 20) {
+        if (isDay()) {
             newCurrentImg = 1;
-        }
-        else {
+        } else {
             newCurrentImg = 2;
         }
 
