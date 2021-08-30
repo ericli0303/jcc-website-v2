@@ -25,7 +25,6 @@
     bottom: 0;
     width: 300px;
     opacity: .8;
-    background: rgb(35, 141, 190);
   }
   
   button {
@@ -81,7 +80,6 @@
     border-radius: 50%;
     flex: 40px 0;
     margin-right: 20px;
-    color:seashell
   }
 
   .icon-location {
@@ -93,13 +91,13 @@
     width: 200px;
     height: 20px;
     flex: 1;
-    color:rgb(255, 255, 255)
   }
   
   .refresh {
     padding: 10px;
     position: absolute;
-    background: rgba(0, 0, 0, 0.4);
+    background: white;
+    /* background: rgba(0, 0, 0, 0.4); */
     border-radius: 10px;
     width: 20px;
     height: 20px;
