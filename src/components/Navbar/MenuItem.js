@@ -34,7 +34,7 @@ export const link = ["/", "/photo", "/mail", "/events", "/donate"]
 
 export const MenuItem = ({ i }) => {
   const style = { 
-    border: `2px solid ${colors[i]}`,
+    // border: `2px solid ${colors[i]}`,
     color: isDay() ? 'black' : 'seashell'
   };
 

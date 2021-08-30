@@ -28,7 +28,7 @@ const sidebar = {
 };
 
 const backgroundStyle = {
-  backgroundColor: isDay() ? '#E7C9A9' : '#238DBE'
+  backgroundColor: isDay() ? '#E7C9A9' : '#105d81'
 };
 
 const Example = () => {
