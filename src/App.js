@@ -10,6 +10,8 @@ import StyledBackground from "./components/Utils/Background/Background.styles";
 
 import DonationPage from "./components/DonationPage/DonationPage.js";
 import LandingPage from "./components/LandingPage/LandingPage";
+import MailchimpForm from "./components/MailPage/MailchimpForm";
+
 
 function App() {
     var clientTime = new Date();
@@ -21,8 +23,9 @@ function App() {
       <StyledBackground className="App">
         <Navbar />
         <Switch>
-        <Route path={link[0]} exact component={LandingPage} />
-        <Route path={link[4]} component={DonationPage} />
+          <Route path={link[0]} exact component={LandingPage} />
+          <Route path={link[2]} exact component={MailchimpForm} />
+          <Route path={link[4]} component={DonationPage} />
         </Switch>
       </StyledBackground>
     </Router>
