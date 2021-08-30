@@ -1,11 +1,17 @@
 import * as React from "react";
 import { motion } from "framer-motion";
+import {isDay} from './../Utils/time-helper';
+
+const color = {
+  stroke: isDay() ? "hsl(0, 0%, 18%)" : "hsl(0, 0%, 100%)"
+}
 
 const Path = props => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
-    stroke="hsl(0, 0%, 18%)"
+    {...color}
+    // stroke="hsl(0, 0%, 18%)"
     strokeLinecap="round"
     {...props}
   />

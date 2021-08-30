@@ -23,9 +23,6 @@ class LandingPage extends React.Component {
         this.changeBackgroundImage();
     }
 
-    componentWillUnmount() {
-
-    }
 
     changeBackgroundImage() {
         // 1: day
@@ -53,7 +50,6 @@ class LandingPage extends React.Component {
             <div>
                 {/* <div className="gradient"></div> */}
                 <div className="App-header" style={{ backgroundImage: imgUrl }}>
-                    {/* <Mailchimp /> */}
                 </div>
                 <Box width="80%">
                     <Box display="flex" flexDirection="row" m={10} flexWrap="wrap">

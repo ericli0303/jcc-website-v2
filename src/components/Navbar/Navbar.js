@@ -5,6 +5,7 @@ import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
 import './Navbar.styles.css'
+import {isDay} from './../Utils/time-helper';
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -26,6 +27,10 @@ const sidebar = {
   }
 };
 
+const backgroundStyle = {
+  backgroundColor: isDay() ? '#E7C9A9' : '#238DBE'
+};
+
 const Example = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
@@ -38,7 +43,7 @@ const Example = () => {
         custom={height}
         ref={containerRef}
       >
-        <motion.div className="background" variants={sidebar} />
+        <motion.div className="background" style={backgroundStyle} variants={sidebar} />
         <Navigation />
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>

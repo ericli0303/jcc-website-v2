@@ -6,6 +6,7 @@ import EmailIcon from '@material-ui/icons/Email';
 import EventIcon from '@material-ui/icons/Event';
 import PaymentIcon from '@material-ui/icons/Payment';
 import history from '../history';
+import {isDay} from './../Utils/time-helper';
 
 const variants = {
   open: {
@@ -32,7 +33,10 @@ export const link = ["/", "/photo", "/mail", "/events", "/donate"]
 
 
 export const MenuItem = ({ i }) => {
-  const style = { border: `2px solid ${colors[i]}` };
+  const style = { 
+    border: `2px solid ${colors[i]}`,
+    color: isDay() ? 'black' : 'seashell'
+  };
 
   function handleClick(i) {
     history.push(link[i]);
