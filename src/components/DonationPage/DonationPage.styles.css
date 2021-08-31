@@ -1,0 +1,10 @@
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    visibility: hidden;
+  }
+  
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+    visibility: visible;
+    color: red;
+}
