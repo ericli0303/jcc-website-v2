@@ -1,5 +1,4 @@
 
-import { Divider } from "@material-ui/core";
 import React from "react";
 import { PayPalButton } from "react-paypal-button-v2";
 import "./DonationPage.styles.css";
@@ -37,7 +36,12 @@ class DonationPage extends React.Component {
                     <p id="validation" class="valid"> Amount is Invalid </p>
                 </div>
 
-                Amount for Donation:
+                <div class="header">
+                    <h2>
+                        Amount for Donation:
+                    </h2>
+                </div>
+
                 <div>
                     <input 
                         type="text" 
@@ -70,7 +74,7 @@ class DonationPage extends React.Component {
                         onSuccess={(details) => {
                             return alert("Transaction completed by " + details.payer.name.given_name)
                         }}
-                        ButtonReady={() => this.setState({ showLoading: false })}
+                        onButtonReady={() => this.setState({ showLoading: false })}
                     />
                 </div>
             </div>
