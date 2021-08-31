@@ -15,8 +15,8 @@ import MailchimpForm from "./components/MailPage/MailchimpForm";
 
 function App() {
     var clientTime = new Date();
-    var currentTimeString = clientTime.getHours();
-    const { height, width } = useWindowDimensions();
+    // var currentTimeString = clientTime.getHours();
+    // const { height, width } = useWindowDimensions();
 
     return (
       <Router history={history}>

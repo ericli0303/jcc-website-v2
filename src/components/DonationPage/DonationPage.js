@@ -2,14 +2,8 @@
 import React from "react";
 import { PayPalButton } from "react-paypal-button-v2";
 
-import StyledDonationPage from './DonationPage.styles';
 
 class DonationPage extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-
     render() {
         return (
                 <div className="App-header">
