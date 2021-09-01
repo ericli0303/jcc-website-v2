@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Box from "@material-ui/core/Box";
 import { isDay } from "./../Utils/time-helper";
 import "./Landingpage.styles.css";
-// import Mailchimp from './../MailPage/MailchimpForm';
+import { FadeInWhenVisible } from "./FadeInWhenVisible";
+
 
 const LandingPage = () => {
 	const images = [
@@ -38,10 +39,12 @@ const LandingPage = () => {
 			<div className="App-header" style={headerImg}></div>
 			<Box display="block" mx="auto" width={0.8}>
 				<Box display="flex" flexDirection="row" flexWrap="wrap" m={5}>
-					<img
-						alt="first image landing"
-						src="https://i.pinimg.com/736x/33/32/6d/33326dcddbf15c56d631e374b62338dc.jpg"
-					/>
+					<FadeInWhenVisible>
+						<img
+							alt="first image landing"
+							src="https://i.pinimg.com/736x/33/32/6d/33326dcddbf15c56d631e374b62338dc.jpg"
+						/>
+					</FadeInWhenVisible>
 					<Box mx={5} width={0.4}>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -70,15 +73,19 @@ const LandingPage = () => {
 							deserunt mollit anim id est laborum.
 						</p>
 					</Box>
+					<FadeInWhenVisible>
+						<img
+							alt="second image landing"
+							src="https://i.redd.it/02g1pfot5ds41.jpg"
+						/>
+					</FadeInWhenVisible>
+				</Box>
+				<FadeInWhenVisible>
 					<img
 						alt="second image landing"
 						src="https://i.redd.it/02g1pfot5ds41.jpg"
 					/>
-				</Box>
-				<img
-					alt="second image landing"
-					src="https://i.redd.it/02g1pfot5ds41.jpg"
-				/>
+				</FadeInWhenVisible>
 			</Box>
 		</div>
 	);

@@ -1,11 +1,10 @@
-import React from 'react';
-import { render } from 'react-dom'
-import './style.css'
+import {React, useState} from 'react';
+import './SimpleForm.styles.css'
 
 const SimpleForm = ({ status, message, className, style, onSubmitted}) => {
     let input;
 
-    const submit = () =>
+    const submit = () => 
         input &&
         input.value.indexOf("@") > -1 &&
         onSubmitted({
@@ -13,8 +12,8 @@ const SimpleForm = ({ status, message, className, style, onSubmitted}) => {
     });
 
     return (
-        <div class="content__item">
-            <h2 id="mailing">Join our mailing list!</h2>
+        <div>
+            <h2 style={{color: "white"}}>Join our mailing list!</h2>
             <div className={className} style={style}>
                 {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
                 {status === "error" && (
@@ -29,16 +28,14 @@ const SimpleForm = ({ status, message, className, style, onSubmitted}) => {
                     dangerouslySetInnerHTML={{ __html: message }}
                     />
                 )}  
-            <div class="field">
+            <div className="field">
                 <input
                     ref={node => (input = node)}
                     type="email"
                     placeholder="Your email"
                 />
                 </div>
-                <button className="button button--pan"  onClick={submit}>
-                    <p>Submit</p>
-                </button>    
+                <button className="button button--mimas" onClick={submit}><span>Submit</span></button>
             </div>
         </div>
       );

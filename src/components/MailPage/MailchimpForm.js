@@ -22,6 +22,7 @@ class MailchimpForm extends Component {
 
 
     subscribe = data => {
+        console.log('running subscribe');
         const params = toQueryString(data);
         const url = getAjaxUrl(this.props.url) + "&" + params;
         this.setState(
@@ -73,7 +74,6 @@ MailchimpForm.propTypes = {
 
 MailchimpForm.defaultProps = {
     render: ({ subscribe, status, message}) => {
-        
         return (
             <div>
                 <div className="App-header">
