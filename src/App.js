@@ -11,6 +11,8 @@ import StyledBackground from "./components/Utils/Background/Background.styles";
 import DonationPage from "./components/DonationPage/DonationPage.js";
 import LandingPage from "./components/LandingPage/LandingPage";
 import MailchimpForm from "./components/MailPage/MailchimpForm";
+import PhotoPage from './components/PhotoPage/PhotoPage';
+import GalleryPage from './components/PhotoPage/GalleryPage';
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
         <Navbar />
         <Switch>
           <Route path={link[0]} exact component={LandingPage} />
+          <Route path={link[1]} exact component={PhotoPage} />
+          <Route path={`${link[1]}/album/:id`} exact component={GalleryPage} />
           <Route path={link[2]} exact component={MailchimpForm} />
           <Route path={link[4]} component={DonationPage} />
         </Switch>
