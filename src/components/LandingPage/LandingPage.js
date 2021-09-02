@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Box from "@material-ui/core/Box";
 import { isDay } from "./../Utils/time-helper";
-import "./Landingpage.styles.css";
+// import "./Landingpage.styles.css";
+import StyledLandingPage from "./LandingPage.styles"
 // import Mailchimp from './../MailPage/MailchimpForm';
 
 const LandingPage = () => {
@@ -19,6 +20,7 @@ const LandingPage = () => {
 		let newCurrentImg = 0;
 
 		if (isDay()) {
+            console.log('true');
 			newCurrentImg = 1;
 		} else {
 			newCurrentImg = 2;
@@ -33,8 +35,7 @@ const LandingPage = () => {
 	};
 
 	return (
-		<div>
-			{/* <div className="gradient"></div> */}
+		<StyledLandingPage>
 			<div className="App-header" style={headerImg}></div>
 			<Box display="block" mx="auto" width={0.8}>
 				<Box display="flex" flexDirection="row" flexWrap="wrap" m={5}>
@@ -43,7 +44,7 @@ const LandingPage = () => {
 						src="https://i.pinimg.com/736x/33/32/6d/33326dcddbf15c56d631e374b62338dc.jpg"
 					/>
 					<Box mx={5} width={0.4}>
-						<p>
+						<p className='text'>
 							Lorem ipsum dolor sit amet, consectetur adipiscing
 							elit, sed do eiusmod tempor incididunt ut labore et
 							dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -58,7 +59,7 @@ const LandingPage = () => {
 				</Box>
 				<Box display="flex" flexDirection="row" flexWrap="wrap" m={5}>
 					<Box mx={5} width={0.4}>
-						<p>
+						<p className='text'>
 							Lorem ipsum dolor sit amet, consectetur adipiscing
 							elit, sed do eiusmod tempor incididunt ut labore et
 							dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -80,7 +81,7 @@ const LandingPage = () => {
 					src="https://i.redd.it/02g1pfot5ds41.jpg"
 				/>
 			</Box>
-		</div>
+		</StyledLandingPage>
 	);
 };
 
