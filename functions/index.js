@@ -1,9 +1,11 @@
-const { ThreeDRotation } = require("@material-ui/icons");
 const functions = require("firebase-functions");
-const credentials = require("./credentials.json");
+const config = functions.config();
 const { google } = require("googleapis");
 const { getJwtClient } = require("./jwtClient");
 const moment = require("moment");
+
+let client_credentials = config.client_credentials
+client_credentials.private_key = decodeURI(client_credentials.private_key);
 
 // Create and Deploy Your First Cloud Functions
 // https://firebase.google.com/docs/functions/write-firebase-functions
@@ -19,22 +21,10 @@ exports.getPhotosForAlbum = functions.https.onRequest((request, response) => {
 	response.send("Hello from Firebase!");
 });
 
-// Sets the time to be the latest 9/1 that has passed
+// Minimum time starts from last month
 const getTimeMin = () => {
-	// If today is after 9/1/current-year, timeMin is 9/1/current-year
-	// else, timeMin is 9/1/last year
-	let now = moment();
-	now.set("hour", 0);
-	now.set("minute", 0);
-	now.set("second", 0);
-	if (now.month() >= 8) {
-		now.set("month", 8);
-		now.set("date", 1);
-	} else {
-		now.set("month", 8);
-		now.set("date", 1);
-		now.set("year", now.year() - 1);
-	}
+	let now = moment()
+	now.subtract(1, "month")
 	return now.toDate();
 };
 
@@ -59,15 +49,13 @@ const getTimeMin = () => {
  */
 exports.getCalendarEvents = functions.https.onRequest(
 	async (request, response) => {
-		let jwtClient = await getJwtClient(
-			credentials,
-			"https://www.googleapis.com/auth/calendar"
-		);
+		let credentials = client_credentials;
+		let jwtClient = await getJwtClient(credentials, "https://www.googleapis.com/auth/calendar");
 		let resp = await google.calendar("v3").events.list({
 			auth: jwtClient,
 			calendarId: "ng9mjvas1i5li0kv4bhd926p54@group.calendar.google.com",
-			timeMin: getTimeMin(),
-			maxResults: 50,
+			timeMin: getTimeMin().toISOString(),
+			maxResults: 150,
 			singleEvents: true,
 			orderBy: "startTime",
 		});
