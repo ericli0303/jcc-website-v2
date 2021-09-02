@@ -49,7 +49,7 @@ const SimpleForm = ({ status, message, className, style, onSubmitted}) => {
                         dangerouslySetInnerHTML={{ __html: "You're already subscribed." }}
                         />
             )}
-                    {status === "success" && (
+                    {status === "success" && !invalidEmail && (
                         <div
                         className="text mailingSubmitMessage"
                         style={{ color: "green" }}
