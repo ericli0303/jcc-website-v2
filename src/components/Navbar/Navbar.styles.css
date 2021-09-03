@@ -28,7 +28,7 @@
     opacity: .8;
   }
   
-  button {
+  .navbarButton {
     outline: none;
     border: none;
     cursor: pointer;
