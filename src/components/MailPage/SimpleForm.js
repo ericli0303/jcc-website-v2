@@ -1,5 +1,7 @@
-import {React, useState} from 'react';
+import {React, useEffect, useState} from 'react';
 import './SimpleForm.styles.css'
+import {isDay} from './../Utils/time-helper';
+
 
 const SimpleForm = ({ status, message, className, style, onSubmitted}) => {
     const [email, setEmail] = useState("");
@@ -11,7 +13,6 @@ const SimpleForm = ({ status, message, className, style, onSubmitted}) => {
 
         if (/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g.test(email)) {
             setInvalid(false);
-            console.log(email)
             onSubmitted({
                 EMAIL: email
             });
@@ -19,15 +20,18 @@ const SimpleForm = ({ status, message, className, style, onSubmitted}) => {
         else  {
             setInvalid(true);
         }
-
+                
         setEmail("");
     }
+
+    const backgroundStyle = {
+        backgroundColor: isDay() ? '#ebd3ba' : '#105d81'
+      };
 
     return (
         <div className="content__item" style={{width: "auto"}}>
             <h2 className='text' id="mailing">Join our mailing list!</h2>
             <div className={className} style={style}>
-                
                 <form>
                     <div className="field">
                         <input
@@ -39,33 +43,20 @@ const SimpleForm = ({ status, message, className, style, onSubmitted}) => {
                         />
                     </div>
                     <button className="mailingButton mailingButton--pan" 
-                        onClick={handleSubmit}>
+                        onClick={handleSubmit}
+                        style={backgroundStyle}>
                         <span>Submit</span>
                     </button> 
-                    {status === "error" && (
-                        <div
+                    <div
                         className="text mailingSubmitMessage"
-                        style={{ color: "red"  }}
-                        dangerouslySetInnerHTML={{ __html: "You're already subscribed." }}
-                        />
-            )}
-                    {status === "success" && !invalidEmail && (
-                        <div
-                        className="text mailingSubmitMessage"
-                        style={{ color: "green" }}
-                        dangerouslySetInnerHTML={{ __html: "Thank you for subscribing" }}
-                        />
-                    )}  
-                    {invalidEmail && (
-                        <div
-                        className="text mailingSubmitMessage"
-                        style={{ color: "red" }}
-                        dangerouslySetInnerHTML={{ __html: "Invalid email" }}
-                        />
-                    )}  
+                        style={{ color: (invalidEmail || status === "error") 
+                                        ? "red"
+                                        : "green"}}
+                        dangerouslySetInnerHTML={{ __html: invalidEmail ? "Invalid email" 
+                                                    : message }}
+                    />
                 </form>  
-            </div>
-            
+            </div>          
         </div>
       );
 }
