@@ -1,7 +1,6 @@
 import {React, useEffect, useState} from 'react';
 import './SimpleForm.styles.css'
 import {isDay} from './../Utils/time-helper';
-import banner from './../../img/banner.png'
 
 
 const SimpleForm = ({ status, message, className, style, onSubmitted}) => {
