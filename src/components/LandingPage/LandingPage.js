@@ -5,6 +5,7 @@ import StyledLandingPage from "./LandingPage.styles";
 import ActivitiesTab from "./ActivitiesTab/ActivitiesTab";
 import { motion } from "framer-motion";
 import LandingFooter from "./LandingFooter/LandingFooter";
+import AboutUs from "./AboutUs/AboutUs";
 import FadeIn from 'react-fade-in';
 
 const LandingPage = () => {
@@ -47,6 +48,10 @@ const LandingPage = () => {
 					</FadeIn>
 				</Box>
 			</div>
+			<Box>
+				<AboutUs></AboutUs>
+			</Box>
+
 			<Box display="block" mx="auto" width={0.8}>
 				<ActivitiesTab />
 			</Box>
