@@ -70,7 +70,7 @@ const LandingFooter = () => {
 			>
 				<div
 					onMouseUp={() =>
-						window.open("http://eepurl.com/c_fAdT")
+						window.open("https://mailchi.mp/80e1e1fb8241/newsletter")
 					}
 					className="iconContainer"
 					style={{
