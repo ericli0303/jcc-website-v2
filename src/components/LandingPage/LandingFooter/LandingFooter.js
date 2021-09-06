@@ -13,7 +13,8 @@ const LandingFooter = () => {
 				<div
 					className="iconContainer"
 					style={{
-						backgroundColor: "#515bd4",
+						backgroundImage:
+							"linear-gradient(to bottom left, #C32AA3, #4C5FD7, #7232BD, #F46F30, #FFDC7D)",
 					}}
 				>
 					<InstagramIcon className="icon" fill="white" />
@@ -56,17 +57,17 @@ const LandingFooter = () => {
 			<div style={{ textAlign: "center" }}>
 				<StyledTitleText>JOIN US!</StyledTitleText>
 				<StyledText>Find us on social media</StyledText>
-				<br />
 				<div
 					style={{
 						display: "flex",
 						flexDirection: "row",
 						justifyContent: "center",
+						marginTop: "2rem",
+						marginBottom: "2rem",
 					}}
 				>
 					{socialMediaItems.map((item) => item.icon)}
 				</div>
-				<br />
 			</div>
 		</p>
 	);
