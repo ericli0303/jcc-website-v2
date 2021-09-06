@@ -39,13 +39,13 @@ const StyledLandingPage = styled.div`
         position: absolute;
         width: 4%;
         height: 34%;
-        left: 80%;
+        left: 81%;
         top: 53%;
         
         font-family: Roboto;
         font-style: normal;
         font-weight: 900;
-        font-size: 200%;
+        font-size: 210%;
         line-height: 105%;
         text-align: center;
         
