@@ -23,8 +23,6 @@ const ActivityCard = ({title, description, link, image}) => {
     };
 
     const textStyles = {
-        // marginTop: "60px",
-        // marginBottom: "15px",
         fontSize: '200%'
     };
 
@@ -47,7 +45,6 @@ const ActivityCard = ({title, description, link, image}) => {
 				<Card.Subtitle className="mb-2 text-muted" style={textStyles}>
 					{description}
 				</Card.Subtitle>
-				{/* <Card.Link href="#">Card Link</Card.Link> */}
 			</Card.Body>
 		</Card>
 	);
