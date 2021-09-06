@@ -3,6 +3,8 @@ import StyledText from "../../Utils/StyledText/StyledText.styles";
 import { ReactComponent as DiscordIcon } from "../../../img/discord.svg";
 import { ReactComponent as FacebookIcon } from "../../../img/facebook.svg";
 import { ReactComponent as InstagramIcon } from "../../../img/instagram.svg";
+import { ReactComponent as EmailIcon } from "../../../img/mail.svg";
+
 import "./socialMediaIcons.css";
 
 const LandingFooter = () => {
@@ -56,6 +58,29 @@ const LandingFooter = () => {
 	return (
 		<div style={{ textAlign: "center", paddingBottom: "5rem" }}>
 			<StyledTitleText>JOIN US!</StyledTitleText>
+			<br/>
+			<StyledText>Join our mailing list!</StyledText>
+			<div
+				style={{
+					display: "flex",
+					flexDirection: "row",
+					justifyContent: "center",
+					paddingTop: "3rem",
+				}}
+			>
+				<div
+					onMouseUp={() =>
+						window.open("https://facebook.us17.list-manage.com/subscribe/post?u=1867df19c811c72377101ffa1&amp;id=5a4a4a3428")
+					}
+					className="iconContainer"
+					style={{
+						backgroundColor: "skyblue",
+					}}
+				>
+					<EmailIcon className="icon" fill="white" />
+				</div>
+			</div>
+			<br/>
 			<StyledText>Find us on social media</StyledText>
 			<div
 				style={{
@@ -67,6 +92,7 @@ const LandingFooter = () => {
 			>
 				{socialMediaItems.map((item) => item.icon)}
 			</div>
+			
 		</div>
 	);
 };
