@@ -16,7 +16,7 @@ const StyledTitleText = styled.h1`
 
     /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
     @media screen and (max-width: 600px) {
-        font-size: 10px;
+        font-size: 15px;
     }
     
 `;
