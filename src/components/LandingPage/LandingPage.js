@@ -3,6 +3,7 @@ import Box from "@material-ui/core/Box";
 import { isDay } from "./../Utils/time-helper";
 import StyledLandingPage from "./LandingPage.styles"
 import { FadeInWhenVisible } from "./FadeInWhenVisible";
+import { motion } from 'framer-motion'
 
 const LandingPage = () => {
 	const images = [
@@ -16,7 +17,22 @@ const LandingPage = () => {
 
 	return (
 		<StyledLandingPage>
-			<div className="App-header" style={{backgroundImage: imgUrl}}></div>
+			<div className="App-header" style={{backgroundImage: imgUrl}}>
+			<Box>
+					<motion.span className="clubName"
+						animate={{ x: 100, opacity: 1 }}
+						initial="false"
+						transition={{ duration: 0.8}} >
+							Japanese Culture Club
+					</motion.span>
+					<motion.span className="clubNameJP"
+						animate={{ x: 100, opacity: 1 }}
+						initial="false"
+						transition={{ duration: 0.8, delay: 0.5}} >
+							日本文化部
+					</motion.span>
+				</Box>
+			</div>
 			<Box display="block" mx="auto" width={0.8}>
 				<Box display="flex" flexDirection="row" flexWrap="wrap" m={5}>
 					<FadeInWhenVisible>
@@ -27,7 +43,7 @@ const LandingPage = () => {
 					</FadeInWhenVisible>
 					<Box mx={5} width={0.4}>
 						<p className='text'>
-							Lorem ipsum dolor sit amet, consectetur adipiscing
+							Lorem ipsum dolor sit amet, consectetur	 adipiscing
 							elit, sed do eiusmod tempor incididunt ut labore et
 							dolore magna aliqua. Ut enim ad minim veniam, quis
 							nostrud exercitation ullamco laboris nisi ut aliquip
