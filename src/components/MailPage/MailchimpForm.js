@@ -49,7 +49,7 @@ class MailchimpForm extends Component {
                 } else {
                   this.setState({
                     status: "success",
-                    message: "Thank you for subscribing"
+                    message: "Thank you for subscribing!"
                   });
                 }
               }

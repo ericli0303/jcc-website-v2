@@ -14,7 +14,7 @@ const SimpleForm = ({ status, message, className, style, onSubmitted}) => {
         if (/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g.test(email)) {
             setInvalid(false);
             onSubmitted({
-                EMAIL: email
+                EMAIL: email,
             });
         }
         else  {
@@ -52,9 +52,12 @@ const SimpleForm = ({ status, message, className, style, onSubmitted}) => {
                         style={{ color: (invalidEmail || status === "error") 
                                         ? "red"
                                         : "green"}}
-                        dangerouslySetInnerHTML={{ __html: invalidEmail ? "Invalid email" 
-                                                    : message }}
-                    />
+                        // dangerouslySetInnerHTML={{ __html: invalidEmail ? "Invalid email" 
+                        //                             : message }}
+                        // TODO: Fix this 
+                    >
+                        <p>{invalidEmail ? "Invalid email" : message}</p>
+                    </div>
                 </form>  
             </div>          
         </div>
