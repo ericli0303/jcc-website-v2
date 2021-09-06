@@ -29,7 +29,7 @@ const SimpleForm = ({ status, message, className, style, onSubmitted}) => {
       };
 
     return (
-        <div className="content__item" style={{width: "auto"}}>
+        <div className="content__item">
             <h2 className='text' id="mailing">Join our mailing list!</h2>
             <div className={className} style={style}>
                 <form>

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Box from "@material-ui/core/Box";
 import { isDay } from "./../Utils/time-helper";
 import StyledLandingPage from "./LandingPage.styles";
-import { FadeInWhenVisible } from "./FadeInWhenVisible";
+import ActivitiesTab from "./ActivitiesTab/ActivitiesTab";
+import { motion } from "framer-motion";
 import LandingFooter from "./LandingFooter/LandingFooter";
 
 const LandingPage = () => {
@@ -17,59 +18,30 @@ const LandingPage = () => {
 
 	return (
 		<StyledLandingPage>
-			<div
-				className="App-header"
-				style={{ backgroundImage: imgUrl }}
-			></div>
+			<div className="App-header" style={{ backgroundImage: imgUrl }}>
+				<Box>
+					<motion.span
+						className="clubName"
+						animate={{ x: 100, opacity: 1 }}
+						initial="false"
+						transition={{ duration: 0.8 }}
+					>
+						Japanese Culture Club
+					</motion.span>
+					<motion.span
+						className="clubNameJP"
+						animate={{ x: 100, opacity: 1 }}
+						initial="false"
+						transition={{ duration: 0.8, delay: 0.5 }}
+					>
+						日本文化部
+					</motion.span>
+				</Box>
+			</div>
 			<Box display="block" mx="auto" width={0.8}>
-				<Box display="flex" flexDirection="row" flexWrap="wrap" m={5}>
-					<FadeInWhenVisible>
-						<img
-							alt="first image landing"
-							src="https://i.pinimg.com/736x/33/32/6d/33326dcddbf15c56d631e374b62338dc.jpg"
-						/>
-					</FadeInWhenVisible>
-					<Box mx={5} width={0.4}>
-						<p className="text">
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Ut enim ad minim veniam, quis
-							nostrud exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat. Duis aute irure dolor in
-							reprehenderit in voluptate velit esse cillum dolore
-							eu fugiat nulla pariatur. Excepteur sint occaecat
-							cupidatat non proident, sunt in culpa qui officia
-							deserunt mollit anim id est laborum.
-						</p>
-					</Box>
-				</Box>
-				<Box display="flex" flexDirection="row" flexWrap="wrap" m={5}>
-					<Box mx={5} width={0.4}>
-						<p className="text">
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Ut enim ad minim veniam, quis
-							nostrud exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat. Duis aute irure dolor in
-							reprehenderit in voluptate velit esse cillum dolore
-							eu fugiat nulla pariatur. Excepteur sint occaecat
-							cupidatat non proident, sunt in culpa qui officia
-							deserunt mollit anim id est laborum.
-						</p>
-					</Box>
-					<FadeInWhenVisible>
-						<img
-							alt="second image landing"
-							src="https://i.redd.it/02g1pfot5ds41.jpg"
-						/>
-					</FadeInWhenVisible>
-				</Box>
-				<FadeInWhenVisible>
-					<img
-						alt="second image landing"
-						src="https://i.redd.it/02g1pfot5ds41.jpg"
-					/>
-				</FadeInWhenVisible>
+				<ActivitiesTab />
+			</Box>
+			<Box>
 				<LandingFooter></LandingFooter>
 			</Box>
 		</StyledLandingPage>

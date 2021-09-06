@@ -1,0 +1,11 @@
+.iconContainer {
+	border-radius: 30px;
+	overflow: hidden;
+	margin-inline: 0.7rem;
+}
+
+.icon {
+	height: 3rem;
+	width: 3rem;
+	padding: 0.3rem;
+}

@@ -1,45 +1,72 @@
-import InstagramIcon from "@material-ui/icons/Instagram";
-import FacebookIcon from "@material-ui/icons/Facebook";
-
-const titleSize = 15;
-const secondTitleSize = 25;
+import StyledTitleText from "../../Utils/StyledText/StyledTitleText.styles";
+import StyledText from "../../Utils/StyledText/StyledText.styles";
+import { ReactComponent as DiscordIcon } from "../../../img/discord.svg";
+import { ReactComponent as FacebookIcon } from "../../../img/facebook.svg";
+import { ReactComponent as InstagramIcon } from "../../../img/instagram.svg";
+import "./socialMediaIcons.css";
 
 const LandingFooter = () => {
 	const socialMediaItems = [
-		[
-			"Instagram",
-			<InstagramIcon fontSize="large" />,
-			"https://www.instagram.com/neujcc/",
-		],
-		[
-			"Facebook",
-			<FacebookIcon fontSize="large" />,
-			"https://www.instagram.com/neujcc/",
-		],
-		// ["Discord", null, "https://discord.gg/RVkhqma"],
+		{
+			title: "Instagram",
+			icon: (
+				<div
+					className="iconContainer"
+					style={{
+						backgroundColor: "#515bd4",
+					}}
+				>
+					<InstagramIcon className="icon" fill="white" />
+				</div>
+			),
+			url: "https://www.instagram.com/neujcc/",
+		},
+		{
+			title: "Facebook",
+			icon: (
+				<div
+					className="iconContainer"
+					style={{
+						backgroundColor: "#1877f2",
+					}}
+				>
+					<FacebookIcon className="icon" fill="white" />
+				</div>
+			),
+			url: "https://www.instagram.com/neujcc/",
+		},
+		{
+			title: "Discord",
+			icon: (
+				<div
+					className="iconContainer"
+					style={{
+						backgroundColor: "#7289DA",
+					}}
+				>
+					<DiscordIcon className="icon" fill="white" />
+				</div>
+			),
+			url: "https://discord.gg/RVkhqma",
+		},
 	];
-
-	function makeButton(data) {
-		return (
-			<button>
-				{data[1]}
-				{/* <img
-					src={data[1]}
-					alt={data[0]}
-					onClick={() => console.log("Hi!", data)}
-				></img> */}
-			</button>
-		);
-	}
 
 	return (
 		<p>
 			<div style={{ textAlign: "center" }}>
-				<p style={{ fontSize: titleSize }}>JOIN US!</p>
-				<p style={{ color: "#75B9F8", fontSize: secondTitleSize }}>
-					Find us on social media
-				</p>
-				{socialMediaItems.map(makeButton, this)}
+				<StyledTitleText>JOIN US!</StyledTitleText>
+				<StyledText>Find us on social media</StyledText>
+				<br />
+				<div
+					style={{
+						display: "flex",
+						flexDirection: "row",
+						justifyContent: "center",
+					}}
+				>
+					{socialMediaItems.map((item) => item.icon)}
+				</div>
+				<br />
 			</div>
 		</p>
 	);
