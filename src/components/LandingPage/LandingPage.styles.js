@@ -9,10 +9,6 @@ const StyledLandingPage = styled.div`
         background-blend-mode: multiply;
     }
 
-    & p {
-        color: white;
-    }
-
     .clubName {
         position: absolute;
         width: 30%;
