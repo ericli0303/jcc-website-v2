@@ -7,7 +7,7 @@ const AboutUs = () => {
 
 	return (
 		<div style={{ textAlign: "center" }}>
-			<StyledTitleText>ABOUT US</StyledTitleText>;
+			<StyledTitleText>ABOUT US</StyledTitleText>
 			<StyledText>NEU's Official Japanese Culture Club</StyledText>
 			{/* TODO: Refactor styling */}
 			<p
