@@ -19,7 +19,7 @@ const ActivityCards = () => {
     
 
 	return (
-        <Row s={1} md={3} className="g-4" style={{justifyContent: "center"}}>
+        <Row sm={3} md={3} className="g-4" style={{justifyContent: "center"}}>
             <ActivityCard title={'Movie Nights'} description={"Come join us to watch authentic Japanese movies!"} image={popcorn}/>
             <ActivityCard title={'Game Nights'} description={"Play fun Japanese board games, switch games, and more!"} image={game}/>
             <ActivityCard title={'Exploring Greater Boston'} description={"Join us in hikes, museums, restaurants, and other fun activities in Greater Boston!"} image={train}/>
