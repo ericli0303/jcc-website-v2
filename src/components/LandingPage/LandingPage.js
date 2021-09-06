@@ -6,6 +6,7 @@ import ActivitiesTab from "./ActivitiesTab/ActivitiesTab";
 import { motion } from "framer-motion";
 import LandingFooter from "./LandingFooter/LandingFooter";
 import AboutUs from "./AboutUs/AboutUs";
+import FadeIn from 'react-fade-in';
 
 const LandingPage = () => {
 	const images = [
@@ -20,23 +21,31 @@ const LandingPage = () => {
 	return (
 		<StyledLandingPage>
 			<div className="App-header" style={{ backgroundImage: imgUrl }}>
-				<Box>
-					<motion.span
-						className="clubName"
-						animate={{ x: 100, opacity: 1 }}
-						initial="false"
-						transition={{ duration: 0.8 }}
+				<Box className="titleRootContainer">
+					<FadeIn
+						className={"titleENContainer"}
+						delay={400}
+						transitionDuration={800}
 					>
-						Japanese Culture Club
-					</motion.span>
-					<motion.span
-						className="clubNameJP"
-						animate={{ x: 100, opacity: 1 }}
-						initial="false"
-						transition={{ duration: 0.8, delay: 0.5 }}
+						<p className="titleEN">
+							Japanese
+						</p>
+						<p className="titleEN">
+							Culture
+						</p>
+						<p className="titleEN">
+							Club
+						</p>
+					</FadeIn>
+					<FadeIn
+						className={"titleJPContainer"}
+						delay={200}
+						transitionDuration={700}
 					>
-						日本文化部
-					</motion.span>
+						<p className="titleJP">
+							日本文化部
+						</p>
+					</FadeIn>
 				</Box>
 			</div>
 			<Box>
@@ -46,6 +55,8 @@ const LandingPage = () => {
 			<Box display="block" mx="auto" width={0.8}>
 				<ActivitiesTab />
 			</Box>
+			<br style={{paddingTop: "3rem"}}/>
+			<br/>
 			<Box>
 				<LandingFooter></LandingFooter>
 			</Box>
