@@ -11,7 +11,9 @@ const LandingFooter = () => {
 			icon: (
 				<div
 					className="iconContainer"
-					onMouseUp={() => window.open("https://www.instagram.com/neujcc")}
+					onMouseUp={() =>
+						window.open("https://www.instagram.com/neujcc")
+					}
 					style={{
 						backgroundImage:
 							"linear-gradient(to bottom left, #C32AA3, #4C5FD7, #7232BD, #F46F30, #FFDC7D)",
@@ -24,7 +26,9 @@ const LandingFooter = () => {
 		{
 			icon: (
 				<div
-					onMouseUp={() => window.open("https://www.instagram.com/neujcc/")}
+					onMouseUp={() =>
+						window.open("https://www.facebook.com/groups/neujcc")
+					}
 					className="iconContainer"
 					style={{
 						backgroundColor: "#1877f2",
