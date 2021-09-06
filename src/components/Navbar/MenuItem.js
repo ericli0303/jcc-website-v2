@@ -33,7 +33,7 @@ const enabled = [true, false, true, false, true]
 export const link = ["/", "/photo", "/mail", "/events", "/donate"]
 
 
-export const MenuItem = ({ i }) => {
+export const MenuItem = ({ i, toggle }) => {
   const style = { 
     // border: `2px solid ${colors[i]}`,
     color: enabled[i] ? isDay() ? 'black' : 'seashell' : 'grey'
@@ -42,6 +42,7 @@ export const MenuItem = ({ i }) => {
   function handleClick(i) {
     if (enabled[i]){
       history.push(link[i]);
+      toggle();
     }
   }
 

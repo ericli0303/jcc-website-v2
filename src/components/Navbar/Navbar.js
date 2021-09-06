@@ -44,7 +44,7 @@ const Example = () => {
         ref={containerRef}
       >
         <motion.div className="background" style={backgroundStyle} variants={sidebar} />
-        <Navigation />
+        <Navigation toggle={() => toggleOpen()} />
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
   );
