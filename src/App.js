@@ -26,10 +26,10 @@ function App() {
         <Navbar />
         <Switch>
           <Route path={link[0]} exact component={LandingPage} />
+          {/* <Route path={link[1]} exact component={MailchimpForm} /> */}
           <Route path={link[1]} exact component={PhotoPage} />
           <Route path={`${link[1]}/album/:id`} exact component={GalleryPage} />
-          <Route path={link[2]} exact component={MailchimpForm} />
-          <Route path={link[4]} component={DonationPage} />
+          <Route path={link[3]} component={DonationPage} />
         </Switch>
       </StyledBackground>
     </Router>

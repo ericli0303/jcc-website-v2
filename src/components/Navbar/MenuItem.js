@@ -25,12 +25,12 @@ const variants = {
   }
 };
 
-const icons = [<HomeIcon/>, <PhotoLibraryIcon/>, <EmailIcon/>, <EventIcon/>, <PaymentIcon/>]
-const titles = ['Home', 'Photo Gallery', 'Mailing List', 'Events Calendar', 'Donations']
+const icons = [<HomeIcon/>, <PhotoLibraryIcon/>, <EventIcon/>, <PaymentIcon/>]
+const titles = ['Home', 'Photo Gallery', 'Calendar', 'Donations']
 
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
-const enabled = [true, false, true, false, true]
-export const link = ["/", "/photo", "/mail", "/events", "/donate"]
+const colors = ["#FF008C", "#D309E1", "#7700FF", "#4400FF"];
+const enabled = [true, false, false, false]
+export const link = ["/", "/photo", "/events", "/donate"]
 
 
 export const MenuItem = ({ i, toggle }) => {
