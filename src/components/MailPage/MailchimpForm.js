@@ -39,17 +39,17 @@ class MailchimpForm extends Component {
                 if (err) {
                   this.setState({
                     status: "error",
-                    message: err
+                    message: "Unknown error"
                   });
                 } else if (data.result !== "success") {
                   this.setState({
                     status: "error",
-                    message: data.msg
+                    message: "You're already subscribed"
                   });
                 } else {
                   this.setState({
                     status: "success",
-                    message: data.msg
+                    message: "Thank you for subscribing"
                   });
                 }
               }

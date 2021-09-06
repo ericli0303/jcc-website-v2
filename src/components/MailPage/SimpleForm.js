@@ -1,45 +1,62 @@
-import React from 'react';
-import { render } from 'react-dom'
-import './style.css'
+import {React, useEffect, useState} from 'react';
+import './SimpleForm.styles.css'
+import {isDay} from './../Utils/time-helper';
+
 
 const SimpleForm = ({ status, message, className, style, onSubmitted}) => {
+    const [email, setEmail] = useState("");
+    const [invalidEmail, setInvalid] = useState(false);
     let input;
 
-    const submit = () =>
-        input &&
-        input.value.indexOf("@") > -1 &&
-        onSubmitted({
-        EMAIL: input.value
-    });
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g.test(email)) {
+            setInvalid(false);
+            onSubmitted({
+                EMAIL: email
+            });
+        }
+        else  {
+            setInvalid(true);
+        }
+                
+        setEmail("");
+    }
+
+    const backgroundStyle = {
+        backgroundColor: isDay() ? '#ebd3ba' : '#105d81'
+      };
 
     return (
         <div className="content__item">
             <h2 className='text' id="mailing">Join our mailing list!</h2>
             <div className={className} style={style}>
-                {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
-                {status === "error" && (
+                <form>
+                    <div className="field">
+                        <input
+                            ref={node => (input = node)}
+                            type="email"
+                            placeholder="Your email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
+                    <button className="mailingButton mailingButton--pan" 
+                        onClick={handleSubmit}
+                        style={backgroundStyle}>
+                        <span>Submit</span>
+                    </button> 
                     <div
-                    style={{ color: "red" }}
-                    dangerouslySetInnerHTML={{ __html: message }}
+                        className="text mailingSubmitMessage"
+                        style={{ color: (invalidEmail || status === "error") 
+                                        ? "red"
+                                        : "green"}}
+                        dangerouslySetInnerHTML={{ __html: invalidEmail ? "Invalid email" 
+                                                    : message }}
                     />
-                )}
-                {status === "success" && (
-                    <div
-                    style={{ color: "green" }}
-                    dangerouslySetInnerHTML={{ __html: message }}
-                    />
-                )}  
-            <div class="field">
-                <input
-                    ref={node => (input = node)}
-                    type="email"
-                    placeholder="Your email"
-                />
-                </div>
-                <button className="button button--pan"  onClick={submit}>
-                    <p>Submit</p>
-                </button>    
-            </div>
+                </form>  
+            </div>          
         </div>
       );
 }
