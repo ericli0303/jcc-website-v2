@@ -1,11 +1,21 @@
 .iconContainer {
-	border-radius: 30px;
+	border-radius: 100%;
 	overflow: hidden;
 	margin-inline: 0.7rem;
+	width: 4rem;
+	height: 4rem;
+}
+
+.iconContainer:hover {
+	cursor: pointer;
+}
+
+.iconContainer:active {
+	filter: opacity(25%);
 }
 
 .icon {
-	height: 3rem;
-	width: 3rem;
+	height: 4rem;
+	width: 4rem;
 	padding: 0.3rem;
 }

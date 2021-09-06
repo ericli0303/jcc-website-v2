@@ -4,7 +4,7 @@ import { isDay } from "./../time-helper";
 const StyledText = styled.p`
 	color: ${isDay() ? "black" : "seashell"};
 	/* font-size: 4vw; */
-	font-family: "Montserrat", sans-serif;
+	font-family: Montserrat, sans-serif;
 	margin-block-start: 0;
 	margin-block-end: 0;
 
