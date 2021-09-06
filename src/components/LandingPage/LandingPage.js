@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Box from "@material-ui/core/Box";
 import { isDay } from "./../Utils/time-helper";
-import StyledLandingPage from "./LandingPage.styles"
+import StyledLandingPage from "./LandingPage.styles";
 import ActivitiesTab from "./ActivitiesTab/ActivitiesTab";
-import { FadeInWhenVisible } from "./FadeInWhenVisible";
-import { motion } from 'framer-motion'
-
+import { motion } from "framer-motion";
+import LandingFooter from "./LandingFooter/LandingFooter";
 
 const LandingPage = () => {
 	const images = [
@@ -13,30 +12,37 @@ const LandingPage = () => {
 		"https://cdnb.artstation.com/p/assets/images/images/034/631/465/4k/jaume-rovira-llorca-d2.jpg?1612808303",
 	];
 
-	const currImg = images[isDay() ? 0 : 1]  
-    
-    const imgUrl = `url('${currImg}')`;
+	const currImg = images[isDay() ? 0 : 1];
+
+	const imgUrl = `url('${currImg}')`;
 
 	return (
 		<StyledLandingPage>
-			<div className="App-header" style={{backgroundImage: imgUrl}}>
-			<Box>
-					<motion.span className="clubName"
+			<div className="App-header" style={{ backgroundImage: imgUrl }}>
+				<Box>
+					<motion.span
+						className="clubName"
 						animate={{ x: 100, opacity: 1 }}
 						initial="false"
-						transition={{ duration: 0.8}} >
-							Japanese Culture Club
+						transition={{ duration: 0.8 }}
+					>
+						Japanese Culture Club
 					</motion.span>
-					<motion.span className="clubNameJP"
+					<motion.span
+						className="clubNameJP"
 						animate={{ x: 100, opacity: 1 }}
 						initial="false"
-						transition={{ duration: 0.8, delay: 0.5}} >
-							日本文化部
+						transition={{ duration: 0.8, delay: 0.5 }}
+					>
+						日本文化部
 					</motion.span>
 				</Box>
 			</div>
 			<Box display="block" mx="auto" width={0.8}>
 				<ActivitiesTab />
+			</Box>
+			<Box>
+				<LandingFooter></LandingFooter>
 			</Box>
 		</StyledLandingPage>
 	);
