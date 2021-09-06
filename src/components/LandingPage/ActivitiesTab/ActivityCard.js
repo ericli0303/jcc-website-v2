@@ -13,21 +13,21 @@ const ActivityCard = ({title, description, link, image}) => {
         display: 'block', 
         marginLeft: 'auto', 
         marginRight: 'auto',
-        marginTop: '40px'
+        marginTop: '30px'
     };
 
     const titleStyles = {
-        marginTop: "60px",
-        marginBottom: "25px",
+        marginTop: "50px",
+        marginBottom: "20px",
         fontSize: '250%'
     };
 
     const textStyles = {
-        fontSize: '200%'
+        fontSize: '180%'
     };
 
     const cardStyles = { 
-        width: "35rem", 
+        width: "30rem", 
         height: "25rem", 
         textAlign: 'center', 
         background: 'rgba(153, 200, 255, 0.16)',
