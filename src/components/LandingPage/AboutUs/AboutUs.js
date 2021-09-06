@@ -19,7 +19,7 @@ const AboutUs = () => {
 			<div style={{flex: 5, justifyContent: "center", display: "flex", flexDirection: "column"}}>
 				{isSmallViewport && <br/>}
 				<StyledTitleText>ABOUT US</StyledTitleText>
-				<StyledText>NEU's Official Japanese Culture Club</StyledText>
+				<StyledText style={{paddingRight: isSmallViewport ? 0 : '5rem'}}>NEU's Official Japanese Culture Club</StyledText>
 				<p
 					style={{
 						color: color,
