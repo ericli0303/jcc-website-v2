@@ -15,15 +15,13 @@ const StyledLandingPage = styled.div`
 
     .clubName {
         position: absolute;
-        width: 30%;
-        height: 35%;
-        left: 50%;
-        top: 56%;
-
+        right:30%;
+        top: 75px;
+    
         font-family: Josefin Sans;
         font-style: normal;
         font-weight: bold;
-        font-size: 245%;
+        font-size: 4vw;
         line-height: 145%;
 
         /* or 190px */  
@@ -37,15 +35,13 @@ const StyledLandingPage = styled.div`
 
     .clubNameJP {
         position: absolute;
-        width: 4%;
-        height: 34%;
-        left: 81%;
-        top: 53%;
+        right:25%;
+        top: 75px;
         
         font-family: Roboto;
         font-style: normal;
         font-weight: 900;
-        font-size: 210%;
+        font-size: 4vw;
         line-height: 105%;
         text-align: center;
         

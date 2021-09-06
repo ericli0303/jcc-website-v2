@@ -24,17 +24,15 @@ const LandingPage = () => {
 						className="clubName"
 						animate={{ x: 100, opacity: 1 }}
 						initial="false"
-						transition={{ duration: 0.8 }}
-					>
-						Japanese Culture Club
+						transition={{ duration: 0.8}} >
+							<p> Japanese <br></br> Culture <br></br> Club </p>
 					</motion.span>
 					<motion.span
 						className="clubNameJP"
 						animate={{ x: 100, opacity: 1 }}
 						initial="false"
-						transition={{ duration: 0.8, delay: 0.5 }}
-					>
-						日本文化部
+						transition={{ duration: 0.8, delay: 0.5}} >
+							<p>日<br></br>本<br></br>文<br></br>化<br></br>部</p>
 					</motion.span>
 				</Box>
 			</div>
