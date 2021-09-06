@@ -29,24 +29,39 @@ const icons = [<HomeIcon/>, <PhotoLibraryIcon/>, <EmailIcon/>, <EventIcon/>, <Pa
 const titles = ['Home', 'Photo Gallery', 'Mailing List', 'Events Calendar', 'Donations']
 
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
+const enabled = [true, false, true, false, true]
 export const link = ["/", "/photo", "/mail", "/events", "/donate"]
 
 
 export const MenuItem = ({ i }) => {
   const style = { 
     // border: `2px solid ${colors[i]}`,
-    color: isDay() ? 'black' : 'seashell'
+    color: enabled[i] ? isDay() ? 'black' : 'seashell' : 'grey'
   };
 
   function handleClick(i) {
-    history.push(link[i]);
+    if (enabled[i]){
+      history.push(link[i]);
+    }
+  }
+
+  function whileHover() {
+    if (enabled[i]){
+      return {scale: 1.1}
+    }
+  }
+
+  function whileTap() {
+    if (enabled[i]){
+      return {scale: 0.95}
+    }
   }
 
   return (
     <motion.li
       variants={variants}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={() => whileHover(i)}
+      whileTap={() => whileTap(i)}
       onClick={() => handleClick(i)} 
     >
         <div className="icon-placeholder" style={style} >
@@ -57,6 +72,11 @@ export const MenuItem = ({ i }) => {
           <div className="text-placeholder" style={style} >
               {titles[i]}
           </div>
+          <div className="enabled" >
+            {enabled[i]}
+          </div>
+
+        
     </motion.li>
   );
 };
