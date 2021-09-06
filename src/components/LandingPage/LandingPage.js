@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Box from "@material-ui/core/Box";
 import { isDay } from "./../Utils/time-helper";
-import StyledLandingPage from "./LandingPage.styles"
+import StyledLandingPage from "./LandingPage.styles";
 import { FadeInWhenVisible } from "./FadeInWhenVisible";
+import LandingFooter from "./LandingFooter/LandingFooter";
 
 const LandingPage = () => {
 	const images = [
@@ -10,13 +11,16 @@ const LandingPage = () => {
 		"https://cdnb.artstation.com/p/assets/images/images/034/631/465/4k/jaume-rovira-llorca-d2.jpg?1612808303",
 	];
 
-	const currImg = images[isDay() ? 0 : 1]  
-    
-    const imgUrl = `url('${currImg}')`;
+	const currImg = images[isDay() ? 0 : 1];
+
+	const imgUrl = `url('${currImg}')`;
 
 	return (
 		<StyledLandingPage>
-			<div className="App-header" style={{backgroundImage: imgUrl}}></div>
+			<div
+				className="App-header"
+				style={{ backgroundImage: imgUrl }}
+			></div>
 			<Box display="block" mx="auto" width={0.8}>
 				<Box display="flex" flexDirection="row" flexWrap="wrap" m={5}>
 					<FadeInWhenVisible>
@@ -26,7 +30,7 @@ const LandingPage = () => {
 						/>
 					</FadeInWhenVisible>
 					<Box mx={5} width={0.4}>
-						<p className='text'>
+						<p className="text">
 							Lorem ipsum dolor sit amet, consectetur adipiscing
 							elit, sed do eiusmod tempor incididunt ut labore et
 							dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -41,7 +45,7 @@ const LandingPage = () => {
 				</Box>
 				<Box display="flex" flexDirection="row" flexWrap="wrap" m={5}>
 					<Box mx={5} width={0.4}>
-						<p className='text'>
+						<p className="text">
 							Lorem ipsum dolor sit amet, consectetur adipiscing
 							elit, sed do eiusmod tempor incididunt ut labore et
 							dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -66,6 +70,7 @@ const LandingPage = () => {
 						src="https://i.redd.it/02g1pfot5ds41.jpg"
 					/>
 				</FadeInWhenVisible>
+				<LandingFooter></LandingFooter>
 			</Box>
 		</StyledLandingPage>
 	);
