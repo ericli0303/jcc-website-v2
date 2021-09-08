@@ -13,7 +13,7 @@ const ActivityCard = ({title, description, link, image}) => {
 		<StyledActivityCard className='cardStyles'>
 			<Card.Body>
                 <Card.Img className='imgStyles' src={image}/>
-				<Card.Title className='titleStyles'>{title}</Card.Title>
+				<Card.Title className='titleStyles text'>{title}</Card.Title>
 				<Card.Subtitle className="mb-2 text-muted textStyles">
 					{description}
 				</Card.Subtitle>

@@ -53,7 +53,6 @@ const StyledActivityCard = styled(Card)`
 	}
 
 	.titleStyles {
-        color: white;
 		/* If the screen size is 451px wide or more*/
 		@media screen and (min-width: 451px) {
 			margin-top: 50px;
