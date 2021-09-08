@@ -11,7 +11,7 @@ import  cooking  from "./../../../img/cooking.png";
 import  game  from "./../../../img/game.png";
 import  food  from "./../../../img/food.png";
 import  train  from "./../../../img/train.png";
-import  learning  from "./../../../img/presentation-learning.png";
+import  learning  from "./../../../img/learning.png";
 
 
 const ActivityCards = () => {
@@ -20,12 +20,12 @@ const ActivityCards = () => {
 
 	return (
         <Row sm={3} md={3} className="g-4" style={{justifyContent: "center"}}>
-            <ActivityCard title={'Movie Nights'} description={"Come join us to watch authentic Japanese movies!"} image={popcorn}/>
-            <ActivityCard title={'Game Nights'} description={"Play fun Japanese board games, switch games, and more!"} image={game}/>
-            <ActivityCard title={'Exploring Greater Boston'} description={"Join us in hikes, museums, restaurants, and other fun activities in Greater Boston!"} image={train}/>
-            <ActivityCard title={'Learn Japanese'} description={"Learn how to speak common Japanese phrases!"} image={learning}/>
-            <ActivityCard title={'Cooking Sessions'} description={"Cook and enjoy fun Japanese dishes like onigiri, sushi, udon, and more!"} image={cooking}/>
-            <ActivityCard title={'Friday Outings'} description={"Come eat dinner at new restaurants every Friday!"} image={food}/>
+            <ActivityCard lg="4" title={'Movie Nights'} description={"Come join us to watch authentic Japanese movies!"} image={popcorn}/>
+            <ActivityCard lg="4" title={'Game Nights'} description={"Play fun Japanese board games, switch games, and more!"} image={game}/>
+            <ActivityCard lg="4" title={'Explore Boston'} description={"Join us in hikes, museums, restaurants, and other fun activities in Greater Boston!"} image={train}/>
+            <ActivityCard lg="4" title={'Learn Japanese'} description={"Learn how to speak common Japanese phrases!"} image={learning}/>
+            <ActivityCard lg="4" title={'Cooking Sessions'} description={"Cook and enjoy fun Japanese dishes like onigiri, sushi, udon, and more!"} image={cooking}/>
+            <ActivityCard lg="4" title={'Friday Outings'} description={"Come eat dinner at new restaurants every Friday!"} image={food}/>
         </Row>
 	);
 };
