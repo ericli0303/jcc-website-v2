@@ -49,13 +49,18 @@ const StyledActivityCard = styled(Card)`
 		}
 
 		/* If the screen size is 999px wide or less*/
-		@media screen and (max-width: 1549px) and (min-width: 1001px) {
+		@media screen and (max-width: 1549px) and (min-width: 1010px) {
 			width: 45%;
 		}
 
 		/* If the screen size is 999px wide or less*/
-		@media screen and (max-width: 1000px) {
-			width: 96%;
+		@media screen and (max-width: 1009px) and (min-width: 651px) {
+			width: 70%;
+		}
+
+		/* If the screen size is 999px wide or less*/
+		@media screen and (max-width: 650px) {
+			width: 100%;
 		}
 
 
