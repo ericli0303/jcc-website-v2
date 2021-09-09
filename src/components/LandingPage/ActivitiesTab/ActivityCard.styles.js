@@ -24,18 +24,18 @@ const StyledActivityCard = styled(Card)`
 	.textStyles {
 
 		/* If the screen size is 451px wide or more*/
-		@media screen and (min-width: 451px) {
+		@media screen and (min-width: 600px) {
             font-size: 180%;
 		}
 
-		/* If the screen size is 450px wide or less*/
-		@media screen and (max-width: 450px) {
-            font-size: 140%;
+		/* If the screen size is 999px wide or less*/
+		@media screen and (max-width: 599px) {
+			font-size: 140%;
 		}
+
 	}
 
 	&.cardStyles {
-		width: 28rem;
 		height: 25rem;
 		text-align: center;
 		background: rgba(153, 200, 255, 0.16);
@@ -44,24 +44,37 @@ const StyledActivityCard = styled(Card)`
 		margin-right: 15px;
 
 		/* If the screen size is 451px wide or more*/
-		@media screen and (min-width: 451px) {
+		@media screen and (min-width: 1550px) {
+			width: 30%;
 		}
 
-		/* If the screen size is 450px wide or less*/
-		@media screen and (max-width: 450px) {
+		/* If the screen size is 999px wide or less*/
+		@media screen and (max-width: 1549px) and (min-width: 1001px) {
+			width: 45%;
 		}
+
+		/* If the screen size is 999px wide or less*/
+		@media screen and (max-width: 1000px) {
+			width: 96%;
+		}
+
+
+		/* @media screen and (max-width: 1549px) and (min-width: 1000px) {
+			width: 45%;
+		}​ */
+
 	}
 
 	.titleStyles {
 		/* If the screen size is 451px wide or more*/
-		@media screen and (min-width: 451px) {
+		@media screen and (min-width: 600px) {
 			margin-top: 50px;
 			margin-bottom: 20px;
 			font-size: 250%;
 		}
 
 		/* If the screen size is 450px wide or less*/
-		@media screen and (max-width: 450px) {
+		@media screen and (max-width: 599px) {
 			margin-top: 20px;
 			margin-bottom: 15px;
 			font-size: 230%;
