@@ -13,7 +13,7 @@ const LandingFooter = () => {
 			icon: (
 				<div
 					className="iconContainer"
-					onMouseUp={() =>
+					onMouseDown={() =>
 						window.open("https://www.instagram.com/neujcc")
 					}
 					style={{
@@ -28,7 +28,7 @@ const LandingFooter = () => {
 		{
 			icon: (
 				<div
-					onMouseUp={() =>
+					onMouseDown={() =>
 						window.open("https://www.facebook.com/groups/neujcc")
 					}
 					className="iconContainer"
@@ -43,7 +43,7 @@ const LandingFooter = () => {
 		{
 			icon: (
 				<div
-					onMouseUp={() => window.open("https://discord.gg/RVkhqma")}
+					onMouseDown={() => window.open("https://discord.gg/RVkhqma")}
 					className="iconContainer"
 					style={{
 						backgroundColor: "#7289DA",
@@ -58,7 +58,7 @@ const LandingFooter = () => {
 	return (
 		<div style={{ textAlign: "center", paddingBottom: "5rem" }}>
 			<StyledTitleText>JOIN US!</StyledTitleText>
-			<br/>
+			<br />
 			<StyledText>Join our mailing list!</StyledText>
 			<div
 				style={{
@@ -69,7 +69,7 @@ const LandingFooter = () => {
 				}}
 			>
 				<div
-					onMouseUp={() =>
+					onMouseDown={() =>
 						window.open("https://mailchi.mp/80e1e1fb8241/newsletter")
 					}
 					className="iconContainer"
@@ -80,7 +80,7 @@ const LandingFooter = () => {
 					<EmailIcon className="icon" fill="white" />
 				</div>
 			</div>
-			<br/>
+			<br />
 			<StyledText>Find us on social media</StyledText>
 			<div
 				style={{
@@ -92,7 +92,7 @@ const LandingFooter = () => {
 			>
 				{socialMediaItems.map((item) => item.icon)}
 			</div>
-			
+
 		</div>
 	);
 };
